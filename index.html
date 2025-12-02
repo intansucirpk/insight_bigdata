@@ -1,1 +1,86 @@
-sss
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Analisis</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 240px;
+        background: #2c3e50;
+        color: white;
+        height: 100vh;
+        padding-top: 20px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .sidebar a {
+        display: block;
+        color: white;
+        padding: 13px 20px;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.2s;
+    }
+
+    .sidebar a:hover {
+        background: #34495e;
+        padding-left: 30px;
+    }
+
+    /* Konten sebelah kanan */
+    .content {
+        margin-left: 240px;
+        width: calc(100% - 240px);
+        height: 100vh;
+        background: #ecf0f1;
+    }
+
+    iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+</style>
+
+<script>
+function loadPage(page) {
+    document.getElementById("frame").src = page;
+}
+</script>
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>📊 Dashboard</h2>
+    <a href="#" onclick="loadPage('home.html')">🏠 Home</a>
+    <a href="#" onclick="loadPage('forecast_map.html')">📈 Forecasting</a>
+    <a href="#" onclick="loadPage('klasifikasi.html')">🔍 Klasifikasi</a>
+    <a href="#" onclick="loadPage('Clustering_Insight(Map).html')">🧩 Clustering</a>
+    <a href="#" onclick="loadPage('detection_anomaly.html')">⚠️ Anomaly Detection</a>
+</div>
+
+<!-- Area Konten -->
+<div class="content">
+    <iframe id="frame" src="home.html"></iframe>
+</div>
+
+</body>
+</html>
